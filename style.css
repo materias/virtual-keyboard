@@ -1,0 +1,117 @@
+.keypad {
+  position: absolute;
+   width: 750px;
+   height: 250px;
+   border-radius: 5px;
+   top: 220px;
+   left: 203px;
+   padding: 5px;
+   user-select: none;
+   background: #ff6347;
+}
+
+#userinput {
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  width: 755px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+button {
+    height: 45px;
+    width: 45px;
+    margin: 2px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+}
+
+.symbol {
+  background: rgba(0, 0, 0, 0.1);
+}
+.del {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.space {
+    width: 300px;
+    background: rgba(0, 0, 0, 0.1);  
+}
+
+.backspace {
+    background: palegreen;
+    width: 108px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.enter {
+    width: 123px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+    width: 60px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.caps {
+    width: 80px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.left-shift {
+    width: 109px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.right-shift {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ctrl {
+  width: 72px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.win {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.alt {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  background: rgba(0, 0, 0, 0.1); 
+}
+
+
+#par {
+  position: fixed;
+  margin: 500px 300px 50px 480px;
+  text-align: justify;
+  font-family: Roboto;
+}
+
+#mac {
+  position: fixed;
+  margin: 520px 300px 50px 500px;
+  text-align: justify;
+  font-family: Roboto;
+}
+
+.active {
+  background-image: linear-gradient(to left,transparent,transparent 10%,lavender 90%, lavender);
+  background-position: 100% 0;
+  color: white;
+  transition: all .44s ease;
+  border-radius: 100%;
+}
