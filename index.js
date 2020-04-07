@@ -122,7 +122,26 @@ function createKeypad () {
     keypads.appendChild(inputElement)
   };
 
-  
+  let flag = 'eng'
+  const lang = document.querySelectorAll('button')
+  lang[0].className = 'symbol'
+  lang[28].className = 'del'
+  lang[13].className = 'backspace'
+  lang[14].className = 'tab'
+  lang[29].className = 'caps'
+  lang[41].className = 'enter'
+  lang[42].className = 'left-shift'
+  lang[55].className = 'right-shift'
+  lang[56].className = 'ctrl'
+  lang[61].className = 'ctrl'
+  lang[59].className = 'space'
+  lang[57].className = 'win'
+  lang[58].className = 'alt'
+  lang[60].className = 'alt'
+  lang[54].className = 'arrow'
+  lang[62].className = 'arrow'
+  lang[63].className = 'arrow'
+  lang[64].className = 'arrow'
 
   document.addEventListener('keydown', (event) => {
     if (event.shiftKey && event.altKey) {
