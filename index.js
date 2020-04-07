@@ -240,7 +240,7 @@ function createKeypad () {
       element.classList.remove('active')
     })
     document.querySelectorAll('#key').forEach(function () {
-      for (let i = 0; i < codes.length; i++) {
+      for (let i of codes) {
         const p = codes.indexOf(event.code)
         lang[p].classList.add('active')
       }
