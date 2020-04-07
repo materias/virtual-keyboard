@@ -147,12 +147,12 @@ function createKeypad () {
     if (event.shiftKey && event.altKey) {
       if (flag == 'eng') {
         flag = 'rus'
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = rus_letters[index]
         })
       } else {
         flag = 'eng'
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = letters[index]
         })
       }
@@ -160,12 +160,12 @@ function createKeypad () {
     if (event.shiftKey && event.altKey == false) {
       if (flag == 'eng') {
         flag = 'rus'
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = shift_rus_letters[index]
         })
       } else {
         flag = 'eng'
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = shift_eng_letters[index]
         })
       }
@@ -175,44 +175,44 @@ function createKeypad () {
       if (lang[15].innerHTML == 'q') {
         // flag = 'rus';
         // shift = 'big';
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = caps_eng_letters[index]
         })
       } else if (lang[15].innerHTML == 'й') {
         // flag = 'eng';
         // shift = 'big';
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = caps_rus_letters[index]
         })
       } else if (lang[15].innerHTML == 'Q') {
         // flag = 'rus';
         // shift = 'small';
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = letters[index]
         })
       } else {
         // flag = 'rus';
         // shift = 'small';
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = rus_letters[index]
         })
       }
     };
     if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
       if (lang[15].innerHTML == 'q') {
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = shift_eng_letters[index]
         })
       } else if (lang[15].innerHTML == 'й') {
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = shift_rus_letters[index]
         })
       } else if (lang[15].innerHTML == 'Q') {
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = letters[index]
         })
       } else {
-        lang.forEach(function (element, index) {
+        lang.forEach((element, index) => {
           return element.innerHTML = rus_letters[index]
         })
       }
