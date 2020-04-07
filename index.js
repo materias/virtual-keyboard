@@ -200,26 +200,18 @@ function createKeypad () {
     };
     if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
       if (lang[15].innerHTML == 'q') {
-        // flag = 'rus';
-        // shift = 'big';
         lang.forEach(function (element, index) {
           return element.innerHTML = shift_eng_letters[index]
         })
       } else if (lang[15].innerHTML == 'й') {
-        // flag = 'eng';
-        // shift = 'big';
         lang.forEach(function (element, index) {
           return element.innerHTML = shift_rus_letters[index]
         })
       } else if (lang[15].innerHTML == 'Q') {
-        // flag = 'rus';
-        // shift = 'small';
         lang.forEach(function (element, index) {
           return element.innerHTML = letters[index]
         })
       } else {
-        // flag = 'rus';
-        // shift = 'small';
         lang.forEach(function (element, index) {
           return element.innerHTML = rus_letters[index]
         })
