@@ -64,7 +64,63 @@ function createKeypad () {
     inputElement.data = letters[index]
     keypads.appendChild(inputElement)
 
-    
+    switch (letters[index]) {
+      case 'DEL':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value.slice(1, text.value.length)
+        }, false)
+        break
+
+      case 'Tab':
+        inputElement.addEventListener('click', function () {
+          text.value += '    '
+        }, false)
+        break
+
+      case 'Backspace':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value.slice(0, text.value.length - 1)
+        }, false)
+        break
+
+      case 'ENTER':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value + '\n'
+        }, false)
+        break
+
+      case 'Win':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case 'Ctrl':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case 'Alt':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case '':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value += ' '
+        }, false)
+        break
+
+      default:
+        inputElement.addEventListener('click', function (e) {
+          text.value += e.target.innerHTML
+        }, false)
+    };
+
+    keypads.appendChild(inputElement)
+  };
 
   let flag = 'eng'
   const lang = document.querySelectorAll('button')
