@@ -112,6 +112,6 @@ button {
   background-image: linear-gradient(to left,transparent,transparent 10%,lavender 90%, lavender);
   background-position: 100% 0;
   color: white;
-  transition: all .40s ease;
+  transition: all .44s ease;
   border-radius: 100%;
 }
