@@ -1,3 +1,6 @@
+import * as layouts from './layouts.js'
+import * as specialKey from './special-keys.js'
+
 const body = document.querySelector('body')
 const text = document.createElement('textarea')
 text.id = 'userinput'
@@ -106,75 +109,67 @@ function createKeypad () {
 
   document.addEventListener('keydown', (event) => {
     if (event.shiftKey && event.altKey) {
-      if (flag == 'eng') {
+      if (flag === 'eng') {
         flag = 'rus'
         lang.forEach((element, index) => {
-          return element.innerHTML = rus_letters[index]
+          return element.innerHTML = layouts.rusLetters[index]
         })
       } else {
         flag = 'eng'
         lang.forEach((element, index) => {
-          return element.innerHTML = letters[index]
+          return element.innerHTML = layouts.letters[index]
         })
       }
     }
     if (event.shiftKey && event.altKey == false) {
-      if (flag == 'eng') {
+      if (flag === 'eng') {
         flag = 'rus'
         lang.forEach((element, index) => {
-          return element.innerHTML = shift_rus_letters[index]
+          return element.innerHTML = layouts.shiftRusLetters[index]
         })
       } else {
         flag = 'eng'
         lang.forEach((element, index) => {
-          return element.innerHTML = shift_eng_letters[index]
+          return element.innerHTML = layouts.shiftEngLetters[index]
         })
       }
     }
 
-    if (event.code == 'CapsLock') {
-      if (lang[15].innerHTML == 'q') {
-        // flag = 'rus';
-        // shift = 'big';
+    if (event.code === 'CapsLock') {
+      if (lang[15].innerHTML === 'q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = caps_eng_letters[index]
+          return element.innerHTML = layouts.capsEngLetters[index]
         })
-      } else if (lang[15].innerHTML == 'й') {
-        // flag = 'eng';
-        // shift = 'big';
+      } else if (lang[15].innerHTML === 'й') {
         lang.forEach((element, index) => {
-          return element.innerHTML = caps_rus_letters[index]
+          return element.innerHTML = layouts.capsRusLetters[index]
         })
-      } else if (lang[15].innerHTML == 'Q') {
-        // flag = 'rus';
-        // shift = 'small';
+      } else if (lang[15].innerHTML === 'Q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = letters[index]
+          return element.innerHTML = layouts.letters[index]
         })
       } else {
-        // flag = 'rus';
-        // shift = 'small';
         lang.forEach((element, index) => {
-          return element.innerHTML = rus_letters[index]
+          return element.innerHTML = layouts.rusLetters[index]
         })
       }
     };
-    if (event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
-      if (lang[15].innerHTML == 'q') {
+    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+      if (lang[15].innerHTML === 'q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = shift_eng_letters[index]
+          return element.innerHTML = layouts.shiftEngLetters[index]
         })
-      } else if (lang[15].innerHTML == 'й') {
+      } else if (lang[15].innerHTML === 'й') {
         lang.forEach((element, index) => {
-          return element.innerHTML = shift_rus_letters[index]
+          return element.innerHTML = layouts.shiftRusLetters[index]
         })
-      } else if (lang[15].innerHTML == 'Q') {
+      } else if (lang[15].innerHTML === 'Q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = letters[index]
+          return element.innerHTML = layouts.letters[index]
         })
       } else {
         lang.forEach((element, index) => {
-          return element.innerHTML = rus_letters[index]
+          return element.innerHTML = layouts.rusLetters[index]
         })
       }
     };
@@ -188,12 +183,6 @@ function createKeypad () {
       this.classList.add('active')
     }
   })
-
-  // document.onkeypress = function (event) {
-  //     codes.push(event.code);
-  //     console.log(codes);
-  // }
-
 
   document.onkeypress = function (event) {
     document.querySelectorAll('#key').forEach(function (element) {
