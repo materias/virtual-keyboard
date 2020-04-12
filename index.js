@@ -1,6 +1,3 @@
-import * as layouts from './layouts.js'
-import * as specialKey from './special-keys.js'
-
 const body = document.querySelector('body')
 const text = document.createElement('textarea')
 text.id = 'userinput'
@@ -21,14 +18,14 @@ function createKeypad () {
   
   body.appendChild(keypads)
 
-  for (let index = 0; index < layouts.letters.length; index++) {
+  for (let index = 0; index < letters.length; index++) {
     const inputElement = document.createElement('button')
-    inputElement.innerHTML = layouts.letters[index]
+    inputElement.innerHTML = letters[index]
     inputElement.id = 'key'
-    inputElement.data = layouts.letters[index]
+    inputElement.data = letters[index]
     keypads.appendChild(inputElement)
 
-    switch (layouts.letters[index]) {
+    switch (letters[index]) {
       case 'DEL':
         inputElement.addEventListener('click', function () {
           text.value = text.value.slice(1, text.value.length)
@@ -112,12 +109,12 @@ function createKeypad () {
       if (flag === 'eng') {
         flag = 'rus'
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.rusLetters[index]
+          return element.innerHTML = rusLetters[index]
         })
       } else {
         flag = 'eng'
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.letters[index]
+          return element.innerHTML = letters[index]
         })
       }
     }
@@ -125,12 +122,12 @@ function createKeypad () {
       if (flag === 'eng') {
         flag = 'rus'
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.shiftRusLetters[index]
+          return element.innerHTML = shiftRusLetters[index]
         })
       } else {
         flag = 'eng'
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.shiftEngLetters[index]
+          return element.innerHTML = shiftEngLetters[index]
         })
       }
     }
@@ -138,38 +135,38 @@ function createKeypad () {
     if (event.code === 'CapsLock') {
       if (lang[15].innerHTML === 'q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.capsEngLetters[index]
+          return element.innerHTML = capsEngLetters[index]
         })
       } else if (lang[15].innerHTML === 'й') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.capsRusLetters[index]
+          return element.innerHTML = capsRusLetters[index]
         })
       } else if (lang[15].innerHTML === 'Q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.letters[index]
+          return element.innerHTML = letters[index]
         })
       } else {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.rusLetters[index]
+          return element.innerHTML = rusLetters[index]
         })
       }
     };
     if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
       if (lang[15].innerHTML === 'q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.shiftEngLetters[index]
+          return element.innerHTML = shiftEngLetters[index]
         })
       } else if (lang[15].innerHTML === 'й') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.shiftRusLetters[index]
+          return element.innerHTML = shiftRusLetters[index]
         })
       } else if (lang[15].innerHTML === 'Q') {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.letters[index]
+          return element.innerHTML = letters[index]
         })
       } else {
         lang.forEach((element, index) => {
-          return element.innerHTML = layouts.rusLetters[index]
+          return element.innerHTML = rusLetters[index]
         })
       }
     };
@@ -189,8 +186,8 @@ function createKeypad () {
       element.classList.remove('active')
     })
     document.querySelectorAll('#key').forEach(function () {
-      for (let i of specialKey.codes) {
-        const p = specialKey.codes.indexOf(event.code)
+      for (let i of codes) {
+        const p = codes.indexOf(event.code)
         lang[p].classList.add('active')
       }
     })
