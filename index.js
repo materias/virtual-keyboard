@@ -21,14 +21,78 @@ function createKeypad () {
   
   body.appendChild(keypads)
 
-  for (let index = 0; index < letters.length; index++) {
+  for (let index = 0; index < layouts.letters.length; index++) {
     const inputElement = document.createElement('button')
-    inputElement.innerHTML = letters[index]
+    inputElement.innerHTML = layouts.letters[index]
     inputElement.id = 'key'
-    inputElement.data = letters[index]
+    inputElement.data = layouts.letters[index]
     keypads.appendChild(inputElement)
 
-    switch (letters[index]) {
+    switch (layouts.letters[index]) {
+      case 'DEL':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value.slice(1, text.value.length)
+        }, false)
+        break
+
+      case 'Tab':
+        inputElement.addEventListener('click', function () {
+          text.value += '    '
+        }, false)
+        break
+
+      case 'Backspace':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value.slice(0, text.value.length - 1)
+        }, false)
+        break
+
+      case 'ENTER':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value + '\n'
+        }, false)
+        break
+
+      case 'Win':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case 'Ctrl':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case 'Alt':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value
+        }, false)
+        break
+
+      case '':
+        inputElement.addEventListener('click', function () {
+          text.value = text.value += ' '
+        }, false)
+        break
+
+      default:
+        inputElement.addEventListener('click', function (e) {
+          text.value += e.target.innerHTML
+        }, false)
+    };
+
+    keypads.appendChild(inputElement)
+  };
+    for (let index = 0; index < layouts.letters.length; index++) {
+    const inputElement = document.createElement('button')
+    inputElement.innerHTML = layouts.letters[index]
+    inputElement.id = 'key'
+    inputElement.data = layouts.letters[index]
+    keypads.appendChild(inputElement)
+
+    switch (layouts.letters[index]) {
       case 'DEL':
         inputElement.addEventListener('click', function () {
           text.value = text.value.slice(1, text.value.length)
