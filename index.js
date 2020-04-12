@@ -85,71 +85,7 @@ function createKeypad () {
 
     keypads.appendChild(inputElement)
   };
-    for (let index = 0; index < layouts.letters.length; index++) {
-    const inputElement = document.createElement('button')
-    inputElement.innerHTML = layouts.letters[index]
-    inputElement.id = 'key'
-    inputElement.data = layouts.letters[index]
-    keypads.appendChild(inputElement)
-
-    switch (layouts.letters[index]) {
-      case 'DEL':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value.slice(1, text.value.length)
-        }, false)
-        break
-
-      case 'Tab':
-        inputElement.addEventListener('click', function () {
-          text.value += '    '
-        }, false)
-        break
-
-      case 'Backspace':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value.slice(0, text.value.length - 1)
-        }, false)
-        break
-
-      case 'ENTER':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value + '\n'
-        }, false)
-        break
-
-      case 'Win':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value
-        }, false)
-        break
-
-      case 'Ctrl':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value
-        }, false)
-        break
-
-      case 'Alt':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value
-        }, false)
-        break
-
-      case '':
-        inputElement.addEventListener('click', function () {
-          text.value = text.value += ' '
-        }, false)
-        break
-
-      default:
-        inputElement.addEventListener('click', function (e) {
-          text.value += e.target.innerHTML
-        }, false)
-    };
-
-    keypads.appendChild(inputElement)
-  };
-
+    
   let flag = 'eng'
   const lang = document.querySelectorAll('button')
   lang[0].className = 'symbol'
@@ -253,8 +189,8 @@ function createKeypad () {
       element.classList.remove('active')
     })
     document.querySelectorAll('#key').forEach(function () {
-      for (let i of codes) {
-        const p = codes.indexOf(event.code)
+      for (let i of specialKey.codes) {
+        const p = specialKey.codes.indexOf(event.code)
         lang[p].classList.add('active')
       }
     })
